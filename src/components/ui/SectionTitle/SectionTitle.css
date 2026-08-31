@@ -1,0 +1,78 @@
+.section-title {
+    max-width: 760px;
+    margin-bottom: 64px;
+  }
+  
+  .section-title--center {
+    max-width: 640px;
+    margin-inline: auto;
+    text-align: center;
+  }
+  
+  .section-title__title {
+    margin: 18px 0 0;
+  
+    font-family: var(--font-display);
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+    font-weight: 800;
+    color: var(--color-dark);
+  }
+  
+  .section-title__title span {
+    color: var(--color-primary);
+  }
+  
+  .section-title__description {
+    max-width: 650px;
+    margin: 26px auto 0;
+  
+    font-size: 17px;
+    line-height: 1.7;
+  
+  
+    color: var(--color-muted);
+  }
+  
+  .section-title--center .section-title__description {
+    margin-inline: auto;
+  }
+  
+  /* Variante split — título à esquerda, descrição à direita, alinhados na base */
+  .section-title--split {
+    max-width: none;
+  
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: end;
+  }
+  
+  .section-title--split .section-title__main {
+    max-width: 700px;
+  }
+  
+  .section-title__description--side {
+    max-width: 420px;
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 600px) {
+    .section-title {
+      margin-bottom: 42px;
+    }
+  
+  
+    .section-title__description {
+      font-size: 15px;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    .section-title--split {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }

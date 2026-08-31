@@ -1,0 +1,120 @@
+.experiencia {
+  position: relative;
+  padding: 120px 0;
+
+  background: var(--color-bg-soft);
+  color: var(--color-dark);
+}
+
+.experiencia__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 18px;
+}
+
+.experiencia__card {
+  position: relative;
+
+  min-height: 310px;
+
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+
+  padding: 32px;
+  border-radius: var(--radius-lg);
+
+  background: var(--color-white);
+  border: 1px solid rgba(16, 42, 53, 0.06);
+
+  transition:
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
+
+}
+
+.experiencia__card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.experiencia__card--large {
+  background:
+    linear-gradient(145deg, rgba(8, 126, 164, 0.08), rgba(8, 126, 164, 0.02)),
+    var(--color-sand);
+}
+
+.experiencia__card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.experiencia__number {
+  display: block;
+  margin-bottom: 60px;
+
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+
+  color: var(--color-accent);
+}
+
+.experiencia__card h3 {
+  margin: 0;
+
+
+  font-family: var(--font-display);
+  font-size: 24px;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  color: var(--color-dark);
+}
+
+.experiencia__card p {
+  max-width: 320px;
+  margin: 14px 0 0;
+
+  font-size: 14px;
+  line-height: 1.6;
+
+  color: var(--color-muted);
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .experiencia { padding: 90px 0; }
+
+  .experiencia__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .experiencia__card--large {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Celular */
+
+@media (max-width: 600px) {
+  .experiencia { padding: 80px 0; }
+
+  .experiencia__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experiencia__card--large {
+    grid-column: auto;
+  }
+
+  .experiencia__card {
+    min-height: 260px;
+    padding: 26px;
+    border-radius: var(--radius-md);
+  }
+
+  .experiencia__number {
+    margin-bottom: 45px;
+  }
+}

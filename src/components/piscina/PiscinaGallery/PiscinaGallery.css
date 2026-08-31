@@ -1,0 +1,157 @@
+.piscina-gallery {
+  width: 100%;
+}
+
+.piscina-gallery__main {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+
+  background: var(--color-sand);
+}
+
+.piscina-gallery__main img {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  display: block;
+  object-fit: cover;
+}
+
+.piscina-gallery__counter {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+
+
+  padding: 9px 14px;
+  border-radius: 999px;
+
+  background: rgba(16, 42, 53, 0.55);
+  backdrop-filter: blur(10px);
+
+  color: var(--color-white);
+
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.piscina-gallery__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--color-dark);
+
+
+  cursor: pointer;
+  transform: translateY(-50%);
+
+  transition:
+    background-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.piscina-gallery__arrow:hover {
+  background: var(--color-white);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.piscina-gallery__arrow--prev {
+  left: 16px;
+}
+
+.piscina-gallery__arrow--next {
+  right: 16px;
+}
+
+.piscina-gallery__thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+
+  margin-top: 12px;
+}
+
+.piscina-gallery__thumb {
+  position: relative;
+
+
+  height: 100px;
+  padding: 0;
+
+  overflow: hidden;
+
+  border: 2px solid transparent;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+  cursor: pointer;
+
+  opacity: 0.65;
+
+  transition:
+    opacity var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.piscina-gallery__thumb:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.piscina-gallery__thumb--active {
+  border-color: var(--color-accent);
+  opacity: 1;
+}
+
+.piscina-gallery__thumb img {
+  width: 100%;
+  height: 100%;
+
+
+  display: block;
+  object-fit: cover;
+}
+
+@media (max-width: 600px) {
+  .piscina-gallery__main {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-lg);
+  }
+
+  .piscina-gallery__arrow {
+    width: 38px;
+    height: 38px;
+  }
+
+  .piscina-gallery__thumbs {
+    gap: 8px;
+  }
+
+  .piscina-gallery__thumb {
+    height: 72px;
+    border-radius: 10px;
+  }
+}

@@ -1,0 +1,134 @@
+.piscina-video {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 50px;
+
+  align-items: center;
+}
+
+.piscina-video__content {
+  max-width: 420px;
+}
+
+.piscina-video__title {
+  margin: 18px 0 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(32px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  color: var(--color-dark);
+}
+
+.piscina-video__description {
+  margin: 22px 0 0;
+
+  font-size: 15px;
+  line-height: 1.7;
+
+  color: var(--color-muted);
+}
+
+.piscina-video__player {
+
+  position: relative;
+
+  width: 100%;
+  overflow: hidden;
+
+  border-radius: var(--radius-xl);
+  background: var(--color-dark);
+}
+
+.piscina-video__player video {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  object-fit: cover;
+}
+
+.piscina-video__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+
+  width: 76px;
+  height: 76px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: var(--color-accent);
+  color: var(--color-dark);
+
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+
+  box-shadow: var(--shadow-lg);
+
+  transition:
+    transform var(--transition-fast),
+    background-color var(--transition-fast);
+}
+
+.piscina-video__play::before {
+  content: '';
+
+  position: absolute;
+  inset: -14px;
+
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+
+  animation: pulseRing 2.2s ease-out infinite;
+}
+
+@keyframes pulseRing {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+.piscina-video__play:hover {
+  background: var(--color-accent-light);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.piscina-video__play svg {
+  margin-left: 3px;
+}
+
+@media (max-width: 800px) {
+  .piscina-video {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .piscina-video__content {
+    max-width: 600px;
+  }
+
+  .piscina-video__player {
+    border-radius: var(--radius-lg);
+  }
+
+  .piscina-video__play {
+    width: 64px;
+    height: 64px;
+
+  }
+}

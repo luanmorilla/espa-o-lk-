@@ -1,0 +1,39 @@
+/* Indicador pulsante (bolinha "ao vivo") */
+.badge__pulse {
+    position: relative;
+  
+    width: 8px;
+    height: 8px;
+  
+    display: inline-flex;
+  }
+  
+  .badge__pulse-dot {
+    position: absolute;
+    inset: 0;
+  
+    border-radius: 50%;
+    background: var(--color-success);
+  }
+  
+  .badge__pulse-ring {
+    position: absolute;
+    inset: 0;
+  
+    border-radius: 50%;
+    background: var(--color-success);
+  
+    animation: badgePulse 1.8s ease-out infinite;
+  }
+  
+  @keyframes badgePulse {
+    0% {
+      opacity: 0.7;
+      transform: scale(1);
+  
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2.4);
+    }
+  }

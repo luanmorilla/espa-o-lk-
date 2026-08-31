@@ -1,0 +1,129 @@
+.brinquedo-card {
+    position: relative;
+  
+    display: flex;
+    flex-direction: column;
+  
+    width: 100%;
+    padding: 0;
+  
+    border: none;
+    border-radius: var(--radius-lg);
+  
+    background: var(--color-white);
+    box-shadow: var(--shadow-sm);
+  
+    overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+  
+    transition:
+      transform var(--transition-normal),
+      box-shadow var(--transition-normal);
+  }
+  
+  .brinquedo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .brinquedo-card__image {
+    position: relative;
+  
+  
+    width: 100%;
+    aspect-ratio: 4 / 3;
+  
+    overflow: hidden;
+  }
+  
+  .brinquedo-card__image img {
+    width: 100%;
+    height: 100%;
+  
+    object-fit: cover;
+  
+    transition: transform var(--transition-slow);
+  }
+  
+  .brinquedo-card:hover .brinquedo-card__image img {
+    transform: scale(1.06);
+  }
+  
+  .brinquedo-card__category {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+  
+    padding: 6px 12px;
+    border-radius: 999px;
+  
+    background: rgba(16, 42, 53, 0.55);
+    backdrop-filter: blur(8px);
+  
+    color: var(--color-white);
+  
+  
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  
+  .brinquedo-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  
+    padding: 20px;
+  }
+  
+  .brinquedo-card__footer h3 {
+    margin: 0;
+  
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-dark);
+  }
+  
+  .brinquedo-card__footer p {
+    margin: 6px 0 0;
+  
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--color-muted);
+  }
+  
+  
+  .brinquedo-card__icon {
+    flex-shrink: 0;
+  
+    width: 36px;
+    height: 36px;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border-radius: 50%;
+    background: var(--color-sand);
+    color: var(--color-dark);
+  
+    transition:
+      background-color var(--transition-fast),
+      transform var(--transition-fast);
+  }
+  
+  .brinquedo-card:hover .brinquedo-card__icon {
+    background: var(--color-accent);
+    transform: rotate(90deg);
+  }
+  
+  @media (max-width: 600px) {
+    .brinquedo-card__footer {
+      padding: 16px;
+    }
+  }

@@ -1,0 +1,156 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  background-image: url("../../assets/images/hero/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: var(--color-white);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(16, 42, 53, 0.75) 0%,
+      rgba(16, 42, 53, 0.48) 45%,
+      rgba(16, 42, 53, 0.18) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(16, 42, 53, 0.3) 0%,
+      rgba(16, 42, 53, 0.15) 50%,
+      rgba(16, 42, 53, 0.5) 100%
+    );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+
+  width: min(100% - 48px, var(--container-width));
+  margin: 0 auto;
+
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.hero__title {
+  max-width: 760px;
+  margin: 24px 0 0;
+
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6vw, 82px);
+  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.hero__description {
+  max-width: 600px;
+  margin: 28px 0 0;
+
+  font-size: clamp(16px, 2vw, 20px);
+  line-height: 1.6;
+
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 36px;
+}
+
+.hero__scroll {
+  position: absolute;
+  z-index: 2;
+
+  bottom: 28px;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+
+  transform: translateX(-50%);
+
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero__scroll-arrow {
+  animation: heroScroll 1.8s ease-in-out infinite;
+}
+
+@keyframes heroScroll {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 700px;
+    background-position: 60% center;
+  }
+
+  .hero__content {
+    width: min(100% - 32px, 600px);
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  .hero__title {
+    font-size: clamp(40px, 11vw, 60px);
+  }
+
+  .hero__actions {
+    margin-top: 28px;
+  }
+
+  .hero__actions a,
+  .hero__actions button {
+    width: 100%;
+  }
+
+  .hero__scroll {
+    display: none;
+  }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  .hero {
+    min-height: 680px;
+  }
+
+  .hero__content {
+    width: calc(100% - 28px);
+  }
+
+  .hero__title {
+    font-size: 40px;
+  }
+
+  .hero__description {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}

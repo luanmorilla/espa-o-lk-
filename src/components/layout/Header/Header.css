@@ -1,0 +1,206 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+
+  width: 100%;
+  padding: 18px 0;
+
+  background: rgba(16, 42, 53, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.header__container {
+  width: min(100% - 48px, var(--container-width));
+  min-height: 56px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+
+  color: var(--color-white);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.header__logo-main {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.header__logo-name {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: var(--color-accent);
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.header__nav a {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.86);
+
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  transition: color var(--transition-normal);
+}
+
+.header__nav a::after {
+  content: '';
+
+  position: absolute;
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+
+  background: var(--color-accent);
+
+  transition: width var(--transition-normal);
+}
+
+.header__nav a:hover {
+  color: var(--color-white);
+}
+
+.header__nav a:hover::after {
+  width: 100%;
+}
+
+
+.header__nav-button {
+  display: none;
+}
+
+.header__menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+
+  background: transparent;
+  color: var(--color-white);
+  cursor: pointer;
+
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .header__nav {
+    gap: 18px;
+  }
+
+  .header__nav a {
+    font-size: 12px;
+  }
+}
+
+/* Celular */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 12px 0;
+  }
+
+  .header__container {
+    width: calc(100% - 28px);
+    min-height: 52px;
+  }
+
+  .header__nav {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+
+    width: 100%;
+    padding: 24px 20px 32px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+
+    background: rgba(16, 42, 53, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+
+    transition:
+      opacity var(--transition-normal),
+      visibility var(--transition-normal),
+      transform var(--transition-normal);
+  }
+
+  .header__nav--open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .header__nav a {
+    font-size: 15px;
+  }
+
+  .header__nav-button {
+    display: inline-flex;
+    margin-top: 6px;
+  }
+
+  .header__button {
+    display: none;
+  }
+
+  .header__menu-button {
+    display: flex;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .header__logo-main {
+    font-size: 11px;
+  }
+
+  .header__logo-name {
+    font-size: 22px;
+  }
+}

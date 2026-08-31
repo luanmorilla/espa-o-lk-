@@ -1,0 +1,11 @@
+.comodidades {
+    padding: 120px 0;
+  
+    background: var(--color-bg-soft);
+  }
+  
+  @media (max-width: 600px) {
+    .comodidades {
+      padding: 80px 0;
+    }
+  }

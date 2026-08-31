@@ -1,0 +1,28 @@
+.piscina {
+  padding: 120px 0;
+
+  background: var(--color-white);
+  color: var(--color-dark);
+}
+
+.piscina .section-title--split {
+  margin-bottom: 55px;
+}
+
+.piscina > .container > .piscina-gallery {
+  margin-bottom: 110px;
+}
+
+@media (max-width: 800px) {
+  .piscina {
+    padding: 80px 0;
+  }
+
+  .piscina .section-title--split {
+    margin-bottom: 35px;
+  }
+
+  .piscina > .container > .piscina-gallery {
+    margin-bottom: 80px;
+  }
+}
