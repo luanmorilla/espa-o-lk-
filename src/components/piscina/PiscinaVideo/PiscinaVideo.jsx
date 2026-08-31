@@ -43,11 +43,11 @@ function PiscinaVideo() {
           controls={tocando}
           playsInline
           preload="metadata"
-          poster="/src/assets/images/piscina/piscina-video-capa.jpg"
+          poster="/images/piscina/piscina-video-capa.jpg"
           onPause={() => setTocando(false)}
           onEnded={() => setTocando(false)}
         >
-          <source src="/src/assets/videos/piscina.mp4" type="video/mp4" />
+          <source src="/videos/piscina.mp4" type="video/mp4" />
           Seu navegador não suporta vídeos.
         </video>
 

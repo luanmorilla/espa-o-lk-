@@ -4,10 +4,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 import './PiscinaGallery.css'
 
 const fotos = [
-  { src: '/src/assets/images/piscina/piscina-1.jpg', alt: 'Piscina do Espaço LK' },
-  { src: '/src/assets/images/piscina/piscina-2.jpg', alt: 'Área da piscina do Espaço LK' },
-  { src: '/src/assets/images/piscina/piscina-3.jpg', alt: 'Piscina e área de lazer do Espaço LK' },
-  { src: '/src/assets/images/piscina/piscina-4.jpg', alt: 'Detalhes da piscina do Espaço LK' },
+  { src: '/images/piscina/piscina-1.jpg', alt: 'Piscina do Espaço LK' },
+  { src: '/images/piscina/piscina-2.jpg', alt: 'Área da piscina do Espaço LK' },
+  { src: '/images/piscina/piscina-3.jpg', alt: 'Piscina e área de lazer do Espaço LK' },
+  { src: '/images/piscina/piscina-4.jpg', alt: 'Detalhes da piscina do Espaço LK' },
 ]
 
 function PiscinaGallery() {
