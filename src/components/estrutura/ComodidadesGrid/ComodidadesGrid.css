@@ -5,15 +5,19 @@
   }
   
   .comodidade-item {
+    position: relative;
+  
     display: flex;
     align-items: center;
     gap: 16px;
   
-    padding: 22px 20px;
+    padding: 24px 22px;
   
     border-radius: var(--radius-md);
     background: var(--color-white);
     border: 1px solid rgba(16, 42, 53, 0.06);
+  
+    overflow: hidden;
   
     transition:
       transform var(--transition-fast),
@@ -21,36 +25,78 @@
       border-color var(--transition-fast);
   }
   
-  .comodidade-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-sm);
-    border-color: transparent;
+  .comodidade-item::before {
+    content: '';
+  
+    position: absolute;
+    inset: 0;
+  
+  
+    background: linear-gradient(
+      135deg,
+      rgba(8, 126, 164, 0.05),
+      rgba(244, 185, 66, 0.05)
+    );
+  
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+  }
+  
+  @media (hover: hover) {
+    .comodidade-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: transparent;
+    }
+  
+    .comodidade-item:hover::before {
+      opacity: 1;
+    }
+  }
+  
+  /* Card em destaque — "Dois andares" */
+  .comodidade-item--destaque {
+    grid-column: span 3;
+  
+    background: linear-gradient(135deg, var(--color-dark), #163b49);
+    border: none;
+  }
+  
+  .comodidade-item--destaque .comodidade-item__label {
+  
+    color: var(--color-white);
+    font-size: 17px;
+    font-weight: 700;
+  }
+  
+  .comodidade-item--destaque .comodidade-item__icon {
+    background: var(--color-accent);
+    color: var(--color-dark);
   }
   
   .comodidade-item__icon {
+    position: relative;
+    z-index: 1;
     flex-shrink: 0;
   
-    width: 46px;
-    height: 46px;
+    width: 50px;
+    height: 50px;
   
     display: flex;
     align-items: center;
     justify-content: center;
   
     border-radius: 50%;
-    background: var(--color-sand);
+    background: linear-gradient(135deg, var(--color-sand), #efe5d0);
     color: var(--color-primary);
-  
-    transition: background-color var(--transition-fast);
-  }
-  
-  .comodidade-item:hover .comodidade-item__icon {
-    background: var(--color-accent);
-    color: var(--color-dark);
   }
   
   .comodidade-item__label {
+    position: relative;
+    z-index: 1;
+  
     font-size: 14.5px;
+  
     font-weight: 600;
     line-height: 1.4;
     color: var(--color-dark);
@@ -59,6 +105,10 @@
   @media (max-width: 900px) {
     .comodidades-grid {
       grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .comodidade-item--destaque {
+      grid-column: span 2;
     }
   }
   
@@ -69,6 +119,10 @@
     }
   
     .comodidade-item {
-      padding: 18px 16px;
+      padding: 20px 18px;
+    }
+  
+    .comodidade-item--destaque {
+      grid-column: span 1;
     }
   }
