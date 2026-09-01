@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowDown } from 'lucide-react'
 import Badge from '../ui/Badge/Badge'
 import Button from '../ui/Button/Button'
+import { getWhatsappLink } from '../../utils/whatsapp'
 import './Hero.css'
 
 const fadeUp = {
@@ -14,6 +15,10 @@ const fadeUp = {
 }
 
 function Hero() {
+  const linkDisponibilidade = getWhatsappLink(
+    'Olá! Gostaria de consultar a disponibilidade do Espaço LK.'
+  )
+
   return (
     <section className="hero">
       <div className="hero__overlay"></div>
@@ -25,19 +30,22 @@ function Hero() {
           custom={0}
           variants={fadeUp}
         >
-<Badge variant="pill" pulse>Reservas abertas</Badge>        </motion.div>
+
+          <Badge variant="pill" pulse>
+            Reservas abertas
+          </Badge>
+        </motion.div>
 
         <motion.h1
           className="hero__title"
-
           initial="hidden"
           animate="show"
           custom={0.1}
           variants={fadeUp}
         >
-          Diversão, conforto
+          Seu momento especial
           <br />
-          e momentos especiais.
+          começa aqui.
         </motion.h1>
 
         <motion.p
@@ -55,15 +63,21 @@ function Hero() {
           className="hero__actions"
           initial="hidden"
           animate="show"
+
           custom={0.3}
           variants={fadeUp}
         >
-          <Button href="#contato" variant="primary" size="lg">
-            Faça sua reserva
+          <Button
+            href={linkDisponibilidade}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="primary"
+            size="lg"
+          >
+            Consulte disponibilidade
           </Button>
 
-
-          <Button href="#galeria" variant="outline" size="lg">
+          <Button href="#experiencia" variant="outline" size="lg">
             Conheça o espaço
           </Button>
         </motion.div>

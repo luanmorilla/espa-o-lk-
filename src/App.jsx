@@ -5,6 +5,8 @@ import Piscina from './components/piscina/Piscina'
 import BrinquedosGrid from './components/brinquedos/BrinquedosGrid/BrinquedosGrid'
 import Comodidades from './components/estrutura/Comodidades/Comodidades'
 import GaleriaGrid from './components/galeria/GaleriaGrid/GaleriaGrid'
+import CTASection from './components/sections/CTASection/CTASection'
+import Footer from './components/layout/Footer/Footer'
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
       <BrinquedosGrid />
       <Comodidades />
       <GaleriaGrid />
+      <CTASection />
+      <Footer />
     </>
   )
 }
