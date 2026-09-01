@@ -1,4 +1,4 @@
-export const WHATSAPP_NUMBER = '5511971013545'
+export const WHATSAPP_NUMBER = '5511964693016'
 
 export function getWhatsappLink(mensagem) {
   const texto = encodeURIComponent(mensagem)
